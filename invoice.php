@@ -54,8 +54,8 @@
                 </p>
                 <?php endif; ?>
 
-                Valor em <?php echo $key["invoice_fiat"]; ?>: <?php echo $key["invoice_fiat_value"]; ?><br>
-                Transfira exatamente: <?php echo $key["invoice_btc_value"]; ?> BTC<br>
+                Value in <?php echo $key["invoice_fiat"]; ?>: <?php echo $key["invoice_fiat_value"]; ?><br>
+                Transfer exactly: <?php echo $key["invoice_btc_value"]; ?> BTC<br>
                 <img src="https://blockchain.info/qr?data=bitcoin:<?php echo $key["invoice_address"]; ?>?amount=<?php echo $key["invoice_btc_value"]; ?>&size=200" alt=""><br>
                 <?php echo $key["invoice_address"]; ?><br>
                 <br />
@@ -63,7 +63,7 @@
                     <div id="bar" class="bar__percent"></div>
                 </div>
                 <div id="countdown"></div>
-                <div id="result">Esperando pagamento...</div>
+                <div id="result">Waiting for payment...</div>
             </div>
             <!-- /.page__body -->
         </div>
@@ -87,20 +87,11 @@
                             var value = parseInt(response);
 
                             if (value > 0) {
-                                $('#result').text("Recebido!");
+                                $('#result').text("Received!");
                                 $('#countdown').text('');
                                 $('#bar').css("width", 0 + "%");
                                 clearInterval(timer);
                                 clearInterval(bal);
-
-                                $.ajax({
-                                    type: "POST",
-                                    url: "save-tx.php",
-                                    data: {addr : "<?php echo $key["invoice_address"]; ?>"},
-                                    success: function(response) {
-                                        console.log(response);
-                                    }
-                                });
                             } else {
                                 bal = setTimeout(checkBalance, 5000);
                             }
@@ -129,7 +120,7 @@
                         clearInterval(timer);
                         clearInterval(bal);
                         $('#bar').css("width", 0 + "%");
-                        $('#countdown').text('Expirou!');
+                        $('#countdown').text('Expired!');
                         $('#result').text('');
 
                         return;
@@ -140,7 +131,7 @@
                     var minutes = Math.floor((distance % hour) / minute);
                     var seconds = Math.floor((distance % minute) / second);
 
-                    var expire = "Expira em: " + minutes + ':';
+                    var expire = "Expires in: " + minutes + ':';
                         expire += (seconds < 10 ? '0' : '') + seconds;
 
                     barWidth = barWidth - percent;
