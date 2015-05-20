@@ -5,7 +5,7 @@ Clone the project and import the database( ./SQL/ ).
 
 Configure database in ./partials/PDO/settings.init.php
 
-## Usuários
+## Users
 **user**: admin
 **password**: abc12345
 
