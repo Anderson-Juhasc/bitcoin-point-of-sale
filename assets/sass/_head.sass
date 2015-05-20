@@ -1,0 +1,53 @@
+.head
+  background: #333
+  padding: 36px 0
+  a
+    color: #fff
+    &:hover
+      color: rgba(#fff, .8)
+
+.head-logo
+  color: #fff
+  float: left
+  text-decoration: none
+
+.head-logo__icon
+  display: inline-block
+  vertical-align: middle
+  > img
+    fill: #fff
+    height: 16px
+    width: 16px
+
+.head-logo__title
+  display: inline-block
+  vertical-align: middle
+
+.head-nav
+  +cf
+  float: right
+  list-style: none
+  margin: 0
+  > li
+    float: left
+    margin: 0 8px
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: 0
+
+.head-nav-link
+  display: block
+  text-decoration: none
+
+.head-nav-link__icon
+  display: inline-block
+  vertical-align: middle
+  > svg
+    fill: #fff
+    height: 16px
+    width: 16px
+
+.head-nav-link__title
+  display: inline-block
+  vertical-align: middle

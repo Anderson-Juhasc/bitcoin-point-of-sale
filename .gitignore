@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*.swm
+*.swn
+*.swk
+*.swl
+.sass-cache/
+partials/PDO/settings.ini.php
+partials/PDO/logs/

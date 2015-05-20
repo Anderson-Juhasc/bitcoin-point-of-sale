@@ -1,0 +1,41 @@
+.fields
+  list-style: none
+  margin-left: 0
+  > li
+    margin-bottom: 14px
+    &:last-child
+      margin-bottom: 0
+  +media-query(desk)
+    > li
+      display: table
+      margin-bottom: 24px
+      width: 100%
+      &:last-child
+        margin-bottom: 0
+
+.fields__label
+  display: block
+  margin-bottom: 6px
+  +media-query(desk)
+    display: table-cell
+    vertical-align: top
+    width: 25%
+
+.fields__input
+  +media-query(desk)
+    display: table-cell
+    vertical-align: top
+
+.fields-action
+  background: #eee
+  border-top: 1px solid #e5e5e5
+  padding: 14px 24px
+  +media-query(desk)
+    padding-left: 25%
+
+.fields-action__btn
+  display: block
+  width: 100%
+  +media-query(desk)
+    display: inline-block
+    width: auto
